@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>계산기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <div class="display">
+      <div class="expr-line" id="exprLine">&nbsp;</div>
+      <div class="result-line" id="resultLine">0</div>
+    </div>
+
+    <div class="buttons">
+      <!-- Row 1 -->
+      <button class="btn-mode" data-action="setRad" id="btnRad">Rad</button>
+      <button class="btn-mode" data-action="setDeg" id="btnDeg">Deg</button>
+      <button class="btn-fn" data-action="toggleInv" id="btnInv">Inv</button>
+      <button class="btn-ce" data-action="clear">CE</button>
+      <button class="btn-fn" data-action="openParen">(</button>
+      <button class="btn-fn" data-action="closeParen">)</button>
+      <button class="btn-fn" data-operator="×">×</button>
+
+      <!-- Row 2 -->
+      <button class="btn-fn"
+        data-func="sin" data-inv-func="asin"
+        data-label="sin" data-inv-label="sin⁻¹">sin</button>
+      <button class="btn-fn"
+        data-func="cos" data-inv-func="acos"
+        data-label="cos" data-inv-label="cos⁻¹">cos</button>
+      <button class="btn-fn"
+        data-func="tan" data-inv-func="atan"
+        data-label="tan" data-inv-label="tan⁻¹">tan</button>
+      <button class="btn-num" data-digit="7">7</button>
+      <button class="btn-num" data-digit="8">8</button>
+      <button class="btn-num" data-digit="9">9</button>
+      <button class="btn-fn" data-operator="÷">÷</button>
+
+      <!-- Row 3 -->
+      <button class="btn-fn" data-action="factorial">x!</button>
+      <button class="btn-fn"
+        data-func="ln" data-inv-insert="e^("
+        data-label="ln" data-inv-label="eˣ">ln</button>
+      <button class="btn-fn" data-const="π">π</button>
+      <button class="btn-num" data-digit="4">4</button>
+      <button class="btn-num" data-digit="5">5</button>
+      <button class="btn-num" data-digit="6">6</button>
+      <button class="btn-fn" data-operator="−">−</button>
+
+      <!-- Row 4 -->
+      <button class="btn-fn"
+        data-func="log" data-inv-insert="10^("
+        data-label="log" data-inv-label="10ˣ">log</button>
+      <button class="btn-fn" data-const="e">e</button>
+      <button class="btn-fn"
+        data-func="sqrt" data-inv-insert="^2"
+        data-label="√" data-inv-label="x²">√</button>
+      <button class="btn-num" data-digit="1">1</button>
+      <button class="btn-num" data-digit="2">2</button>
+      <button class="btn-num" data-digit="3">3</button>
+      <button class="btn-fn" data-operator="+">+</button>
+
+      <!-- Row 5 -->
+      <button class="btn-fn" data-action="ans">Ans</button>
+      <button class="btn-fn" data-action="insertExp">EXP</button>
+      <button class="btn-fn" data-action="power">xʸ</button>
+      <button class="btn-fn" data-action="decimal">.</button>
+      <button class="btn-num" data-digit="0">0</button>
+      <button class="btn-fn" data-action="backspace">⌫</button>
+      <button class="btn-eq" data-action="equals">=</button>
+    </div>
+
+    <p class="note">13번째 유효숫자에서 반올림하며, 15자리 이상의 계산은 오차가 있을 수 있습니다.</p>
+  </div>
+
+  <script src="evaluator.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

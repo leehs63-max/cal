@@ -1,0 +1,144 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f2f5;
+  font-family: 'Segoe UI', -apple-system, sans-serif;
+}
+
+.calculator {
+  width: 380px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.12);
+}
+
+/* ── Display ─────────────────────────────────────────── */
+.display {
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 12px 4px 14px;
+  margin-bottom: 14px;
+  min-height: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.expr-line {
+  font-size: 13px;
+  color: #999;
+  min-height: 18px;
+  text-align: right;
+  word-break: break-all;
+  max-height: 36px;
+  overflow: hidden;
+}
+
+.result-line {
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+  text-align: right;
+  word-break: break-all;
+  line-height: 1.15;
+  transition: font-size .1s;
+}
+
+.result-line.sm  { font-size: 26px; }
+.result-line.xs  { font-size: 20px; }
+.result-line.xxs { font-size: 16px; }
+.result-line.error { color: #e03030; }
+
+/* ── Button grid ─────────────────────────────────────── */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+button {
+  height: 46px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+  color: #333;
+  background: #f2f3f5;
+  transition: background .1s, transform .08s;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+button:hover  { background: #e8e9eb; }
+button:active { background: #dddee0; transform: scale(.97); }
+
+/* Number buttons — slightly brighter */
+.btn-num {
+  background: #fafafa;
+  font-size: 17px;
+  font-weight: 500;
+  color: #1a1a1a;
+  border: 1px solid #e8e8e8;
+}
+.btn-num:hover  { background: #f0f0f0; }
+.btn-num:active { background: #e4e4e4; }
+
+/* Function / operator buttons */
+.btn-fn { font-size: 14px; color: #444; }
+
+/* Mode toggle: Rad / Deg */
+.btn-mode { font-size: 13px; color: #666; }
+.btn-mode.active {
+  background: #e8f8ee;
+  color: #03c75a;
+  font-weight: 600;
+}
+
+/* CE */
+.btn-ce {
+  background: #e8f8ee;
+  color: #03c75a;
+  font-weight: 600;
+  font-size: 14px;
+}
+.btn-ce:hover  { background: #d4f0e0; }
+.btn-ce:active { background: #c0e8cc; }
+
+/* INV active */
+#btnInv.active {
+  background: #e8f8ee;
+  color: #03c75a;
+  font-weight: 600;
+}
+
+/* Equals */
+.btn-eq {
+  background: #03c75a;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+.btn-eq:hover  { background: #02b350; }
+.btn-eq:active { background: #019e47; }
+
+/* ── Note ────────────────────────────────────────────── */
+.note {
+  margin-top: 14px;
+  font-size: 11px;
+  color: #999;
+  line-height: 1.5;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
